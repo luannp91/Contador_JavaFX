@@ -17,7 +17,10 @@ public class Contador extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Label labelTitle = new Label("Contador");
+        labelTitle.getStyleClass().add("titulo");
+
         Label labelNumber = new Label("0");
+        labelNumber.getStyleClass().add("numero");
 
         Button buttonDecrease = new Button("-");
         buttonDecrease.setOnAction(e -> {
@@ -38,13 +41,18 @@ public class Contador extends Application {
         buttonsBox.getChildren().add(buttonIncrement);
 
         VBox mainBox = new VBox();
+        mainBox.getStyleClass().add("conteudo");
         mainBox.setAlignment(Pos.CENTER);
         mainBox.setSpacing(10);
         mainBox.getChildren().add(labelTitle);
         mainBox.getChildren().add(labelNumber);
         mainBox.getChildren().add(buttonsBox);
 
+        String cssPath = getClass().getResource("/br/com/curso/contador/Style.css").toExternalForm();
+
         Scene mainScene = new Scene(mainBox, 400, 400);
+        mainBox.getStylesheets().add(cssPath);
+        mainBox.getStylesheets().add("https://fonts.googleapis.com/css?family=Oswald");
 
         primaryStage.setScene(mainScene);
         primaryStage.show();

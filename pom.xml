@@ -41,7 +41,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>br.com.curso.contador.App</mainClass>
+                            <mainClass>br.com.curso.contador.Contador</mainClass>
                         </configuration>
                     </execution>
                 </executions>
